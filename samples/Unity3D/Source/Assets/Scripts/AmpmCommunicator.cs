@@ -4,6 +4,27 @@ using AmpmLib;
 
 public class AmpmCommunicator : MonoBehaviour {
 
+	//singleton 
+	static AmpmCommunicator instance = null;
+
+	private void Awake()
+	{
+		if (instance == null)
+		{
+			instance = this;
+			DontDestroyOnLoad(gameObject);
+
+		}
+		else
+		{
+			if (this != instance)
+			{
+				Destroy(gameObject);
+			}
+		}
+	}
+
+
 	// Use this for initialization
 	void OnEnable () {
 		AMPM.OnConfigLoaded += ParseConfig;

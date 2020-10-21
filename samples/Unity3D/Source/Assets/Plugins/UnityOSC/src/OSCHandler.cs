@@ -70,6 +70,7 @@ public class OSCHandler : MonoBehaviour
 	        if (_instance == null) 
 			{
 				_instance = new GameObject ("OSCHandler").AddComponent<OSCHandler>();
+				DontDestroyOnLoad(_instance);
 	        }
 	       
 	        return _instance;

@@ -52,7 +52,7 @@ namespace AmpmLib
             IPHostEntry host;
             try
             {
-                 host = Dns.GetHostEntry(hostName);
+                 host = Dns.GetHostEntry(ipAddress);
             }
             catch(System.Net.Sockets.SocketException ex)
             {
